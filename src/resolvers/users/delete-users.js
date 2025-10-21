@@ -1,15 +1,8 @@
-export let users = [
-  {
-    id: 1,
-    name: "jhon",
-  },
-  {
-    id: 2,
-    " name": "jhon",
-  },
-];
-export const deleteUsers = (req, res) => {
-  const updateUsers = req.body;
-  users = users.filter((user) => user.id !== updateUsers.id);
+import { userModel } from "../../model/user-model.js";
+export const deleteUsers = async (req, res) => {
+  await userModel.findByIdAndDelete(req.body.id, {
+    email: req.body.email,
+    phone: req.body.phone,
+  });
   res.send("user deleted succesfully!");
 };

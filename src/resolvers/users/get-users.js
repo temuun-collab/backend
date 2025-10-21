@@ -1,13 +1,5 @@
-export let users = [
-  {
-    id: 1,
-    name: "jhon",
-  },
-  {
-    id: 2,
-    " name": "jhon",
-  },
-];
-export const getUsers = (req, res) => {
-  res.status(200).json(users);
+import { userModel } from "../../model/user-model.js";
+export const getUsers = async (req, res) => {
+  const dbUsers = await userModel.find();
+  res.status(200).json(dbUsers);
 };

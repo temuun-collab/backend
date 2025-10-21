@@ -1,17 +1,10 @@
-export let users = [
-  {
-    id: 1,
-    name: "jhon",
-  },
-  {
-    id: 2,
-    " name": "jhon",
-  },
-];
-export const updateUsers = (req, res) => {
-  const updateUsers = req.body;
-  users = users.map((user) =>
-    user.id === updateUsers.id ? updateUsers : user
-  );
+import { userModel } from "../../model/user-model.js";
+
+export const updateUsers = async (req, res) => {
+  await userModel.findByIdAndUpdate(req.body.id, {
+    email: req.body.email,
+    phone: req.body.phone,
+  });
+
   res.send("user uptaded succesfully!");
 };
