@@ -1,8 +1,8 @@
-import { foodCategoryModel } from "../../model/food-category-model";
-export const deleteFoodCategory = async (req, res) => {
-  await foodCategoryModel.findByIdAndDelete(req.body.id, {
+import { foodCategoryModel } from "../../model/food-category-model.js";
+export const updateFoodCategory = async (req, res) => {
+  await foodCategoryModel.findByIdAndUpdate(req.body.id, {
     email: req.body.email,
     phone: req.body.phone,
   });
-  res.send("auth deleted succesfully!");
+  res.send("foodCategory update succesfully!");
 };

@@ -2,15 +2,18 @@ import express from "express";
 import { router } from "./src/routes/users.js";
 import mongoose, { Mongoose } from "mongoose";
 import { foodRouter } from "./src/routes/foods.js";
-import { authRouter } from "./src/routes/auths.js";
+
+import { foodCategoryRouter } from "./src/routes/foodsCategory.js";
+import { foodOrderRouter } from "./src/routes/foodsOrder.js";
 const app = express();
 const PORT = 8000;
 app.use(express.json());
 
 app.use("/users", router);
 app.use("/foods", foodRouter);
-app.use("/auths", authRouter);
 
+app.use("/foodsCategory", foodCategoryRouter);
+app.use("/foodsOrder", foodOrderRouter);
 mongoose
   .connect("mongodb+srv://temuun88:temuun88@cluster0.v7wnzxs.mongodb.net/")
   .then(() => console.log("connect!"));

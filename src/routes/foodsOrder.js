@@ -1,0 +1,10 @@
+import express from "express";
+import { createFoodOrder } from "../resolvers/foodOrder/create-food-order.js";
+import { deleteFoodOrder } from "../resolvers/foodOrder/delete-food-order.js";
+import { getFoodOrder } from "../resolvers/foodOrder/get-food-order.js";
+import { updateFoodOrder } from "../resolvers/foodOrder/update-order.js";
+export const foodOrderRouter = express.Router();
+foodOrderRouter.get("/", getFoodOrder);
+foodOrderRouter.post("/", createFoodOrder);
+foodOrderRouter.put("/", updateFoodOrder);
+foodOrderRouter.delete("/", deleteFoodOrder);

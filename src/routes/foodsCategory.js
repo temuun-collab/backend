@@ -1,0 +1,10 @@
+import express from "express";
+import { createFoodCategory } from "../resolvers/foodCategorys/create-food-category.js";
+import { getFoodCategory } from "../resolvers/foodCategorys/get-food-category.js";
+import { deleteFoodCategory } from "../resolvers/foodCategorys/delete-food-category.js";
+import { updateFoodCategory } from "../resolvers/foodCategorys/update-food-category.js";
+export const foodCategoryRouter = express.Router();
+foodCategoryRouter.get("/", getFoodCategory);
+foodCategoryRouter.post("/", createFoodCategory);
+foodCategoryRouter.put("/", updateFoodCategory);
+foodCategoryRouter.delete("/", deleteFoodCategory);

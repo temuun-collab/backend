@@ -4,8 +4,12 @@ const ObjectId = Schema.ObjectId;
 
 const FoodSchema = new Schema({
   id: { type: ObjectId, require: true },
-  name: String,
-  email: String,
-  phone: Number,
+  foodName: String,
+  price: Number,
+  image: String,
+  ingredients: String,
+  category: ObjectId,
+  createdAt: Date,
+  updateAt: Date,
 });
 export const foodModel = mongoose.model("food", FoodSchema);
