@@ -8,7 +8,10 @@ const FoodSchema = new Schema({
   price: Number,
   image: String,
   ingredients: String,
-  category: ObjectId,
+  category: {
+    type: ObjectId,
+    ref: "foodCategory",
+  },
   createdAt: Date,
   updateAt: Date,
 });

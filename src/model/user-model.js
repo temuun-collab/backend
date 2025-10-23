@@ -3,12 +3,14 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 const UserSchema = new Schema({
   id: { type: ObjectId, require: true },
-  name: { type: Number, require: true },
   email: String,
   password: String,
   phoneNumber: String,
   address: String,
-  role: String,
+  role: {
+    type: String,
+    enum: ["USER", "ADMIN"],
+  },
   orderedFoods: ObjectId,
   TextTrackList: Date,
   isVerified: Boolean,
