@@ -12,7 +12,7 @@ const FoodSchema = new Schema({
     type: ObjectId,
     ref: "foodCategory",
   },
-  createdAt: Date,
-  updateAt: Date,
+  createdAt: { type: Date, required: true, default: Date.now },
+  updatedAt: { type: Date, required: true, default: Date.now },
 });
 export const foodModel = mongoose.model("food", FoodSchema);

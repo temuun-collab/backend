@@ -5,8 +5,8 @@ const ObjectId = Schema.ObjectId;
 const FoodCategorySchema = new Schema({
   id: { type: ObjectId, require: true },
   categoryName: String,
-  createdAt: Date,
-  updateAt: Date,
+  createdAt: { type: Date, required: true, default: Date.now },
+  updatedAt: { type: Date, required: true, default: Date.now },
 });
 export const foodCategoryModel = mongoose.model(
   "foodCategory",
