@@ -1,8 +1,12 @@
 import { userModel } from "../../model/user-model.js";
+import bcrypt from "bcrypt";
 export const createUsers = async (req, res) => {
+  const newUser = req.body;
+  const password = newUser.password;
+  const pass = await bcrypt.hash(password, 10);
   await userModel.create({
     email: req.body.email,
-    password: req.body.password,
+    password: pass,
     phoneNumber: req.body.phoneNumber,
     address: req.body.address,
     role: req.body.role,

@@ -6,12 +6,6 @@ export const getUsers = async (req, res) => {
       path: "orderedFoods.foodOrderItems",
       populate: "food",
     },
-    // {
-    //   path: "orderedFoods.foodOrderItems.food",
-    //   populate: {
-    //     path: "category",
-    //   },
-    // },
   ]);
   res.status(200).json(dbUsers);
 };

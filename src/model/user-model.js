@@ -4,7 +4,7 @@ const ObjectId = Schema.ObjectId;
 const UserSchema = new Schema({
   id: { type: ObjectId, require: true },
   email: String,
-  password: String,
+  password: { type: String, require: true },
   phoneNumber: String,
   address: String,
   role: {
