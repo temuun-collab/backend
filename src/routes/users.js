@@ -4,11 +4,10 @@ import { createUsers } from "../resolvers/users/create-users.js";
 import { updateUsers } from "../resolvers/users/update-users.js";
 import { deleteUsers } from "../resolvers/users/delete-users.js";
 import { login } from "../resolvers/users/login.js";
-import { signup } from "../resolvers/users/signup.js";
+
 export const router = express.Router();
 router.get("/", getUsers);
 router.post("/", createUsers);
 router.put("/", updateUsers);
 router.delete("/", deleteUsers);
 router.post("/login", login);
-router.post("/signup", signup);
