@@ -4,10 +4,11 @@ import mongoose, { Mongoose } from "mongoose";
 import { foodRouter } from "./src/routes/foods.js";
 import { foodCategoryRouter } from "./src/routes/foodsCategory.js";
 import { foodOrderRouter } from "./src/routes/foodsOrder.js";
+import cors from "cors";
 const app = express();
 const PORT = 8000;
 app.use(express.json());
-
+app.use(cors());
 app.use("/users", router);
 app.use("/foods", foodRouter);
 app.use("/foodsCategory", foodCategoryRouter);

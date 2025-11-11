@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
 const FoodSchema = new Schema({
-  id: { type: ObjectId, require: true },
+  id: ObjectId,
   foodName: String,
   price: Number,
   image: String,

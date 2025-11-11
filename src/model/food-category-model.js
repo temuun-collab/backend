@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
 const FoodCategorySchema = new Schema({
-  id: { type: ObjectId, require: true },
+  id: ObjectId,
   categoryName: String,
   createdAt: { type: Date, required: true, default: Date.now },
   updatedAt: { type: Date, required: true, default: Date.now },
