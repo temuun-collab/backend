@@ -1,5 +1,5 @@
-import { foodModel } from "../../model/food-model";
-export const findIdFood = async (req, res) => {
+import { foodModel } from "../../model/food-model.js";
+export const FindIdFood = async (req, res) => {
   console.log(req.params.id);
 
   const dbFindId = await foodModel.find({
