@@ -12,13 +12,13 @@ export const createUsers = async (req, res) => {
     // role: req.body.role,
     // orderedFoods: req.body.orderedFoods,
     // isVerified: req.body.isVerified,
-     email,
-  password: hashed,
-  phoneNumber: phoneNumber || "",
-  role: "user",
-  isVerified: false,
-  orderedFoods: [],
-  address: "",
+    email,
+    password: pass,
+    phoneNumber: phoneNumber || "",
+    role: "user",
+    isVerified: false,
+    orderedFoods: [],
+    address: "",
   });
   res.send("user create succesfully!");
 };
